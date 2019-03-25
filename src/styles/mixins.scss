@@ -1,0 +1,29 @@
+@import "variables.scss";
+
+// font
+@mixin font-type-base {
+  font-family: $font-type-base;
+}
+
+@mixin font-size-large {
+  font-size: $font-size-large;
+}
+
+@mixin font-size-medium {
+  font-size: $font-size-medium;
+}
+
+@mixin font-size-small {
+  font-size: $font-size-small;
+}
+
+@mixin font-size-extra-small {
+  font-size: $font-size-extra-small;
+}
+
+// breakpoints
+@mixin bp-desktop {
+  @media (min-width: #{$bp-desktop}) {
+    @content;
+  }
+}

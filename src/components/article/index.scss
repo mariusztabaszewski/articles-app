@@ -1,0 +1,65 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.article {
+  $image-width-small: 160px;
+  $image-height-small: 95px;
+  $image-width-large: 240px;
+  $image-height-large: 145px;
+
+  display: flex;
+  margin-bottom: $space-small;
+
+  &__title {
+    font-weight: bold;
+    margin: 0 0 $space-small;
+
+    @include bp-desktop {
+      @include font-size-large;
+    }
+  }
+
+  &__preamble {
+    display: none;
+
+    @include bp-desktop {
+      @include font-size-small;
+      display: block;
+    }
+  }
+
+  &__date {
+    @include font-size-extra-small;
+    font-style: italic;
+  }
+
+  &__image-container {
+    width: $image-width-small;
+    height: $image-height-small;
+    margin-right: $space-small;
+    flex-shrink: 0;
+    overflow: hidden;
+    background: $color-blue;
+
+    @include bp-desktop {
+      width: $image-width-large;
+      height: $image-height-large;
+    }
+  }
+
+  &__image-placeholder {
+    width: $image-width-small;
+    height: $image-height-small;
+    background: $color-blue;
+
+    @include bp-desktop {
+      width: $image-width-large;
+      height: $image-height-large;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    display: block;
+  }
+}

@@ -1,0 +1,14 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.app {
+  padding: $space-small;
+
+  @include bp-desktop {
+    max-width: 920px;
+    margin: 0 auto;
+    padding-top: $space-medium;
+    display: flex;
+    position: relative;
+  }
+}

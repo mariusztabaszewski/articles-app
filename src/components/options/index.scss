@@ -1,0 +1,120 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.options {
+  margin-bottom: $space-small;
+  display: flex;
+  justify-content: space-between;
+
+  @include bp-desktop {
+    width: 120px;
+    padding-top: $space-large;
+  }
+
+  &__filters-title {
+    @include font-size-extra-small;
+    margin: 0;
+    margin-bottom: $space-small;
+  }
+
+  &__checkboxes {
+    display: flex;
+
+    @include bp-desktop {
+      display: block;
+    }
+  }
+
+  &__label {
+    @include font-size-extra-small;
+    height: 20px;
+    margin: 0 $space-small $space-small 0;
+    padding-left: $space-medium;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  &__checkbox {
+    width: 0;
+    height: 0;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  &__checkmark {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $color-blue;
+  }
+
+  &__checkbox:checked ~ .options__checkmark {
+    background-color: $color-blue;
+  }
+
+  &__checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  &__checkbox:checked ~ .options__checkmark:after {
+    display: block;
+  }
+
+  &__label .options__checkmark:after {
+    width: 5px;
+    height: 10px;
+    left: 8px;
+    top: 5px;
+    transform: rotate(45deg);
+    border: solid $color-white;
+    border-width: 0 3px 3px 0;
+  }
+
+  &__reverse-button {
+    @include font-type-base;
+    height: 18px;
+    position: relative;
+    background: transparent;
+    border: none;
+    padding-right: $space-small;
+    cursor: pointer;
+
+    @include bp-desktop {
+      position: absolute;
+      right: 0;
+      top: $space-medium;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      position: absolute;
+      border-style: solid;
+    }
+
+    &::before {
+      right: 0;
+      top: -2px;
+      border-width: 0 4px 10px 4px;
+      border-color: transparent transparent $color-blue transparent;
+    }
+
+    &::after {
+      right: 0;
+      top: 10px;
+      border-width: 10px 4px 0 4px;
+      border-color: $color-blue transparent transparent transparent;
+    }
+  }
+}

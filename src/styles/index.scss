@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,400i,700');
+@import "mixins.scss";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  @include font-type-base;
+  @include font-size-medium;
+  margin: 0;
+  padding: 0;
+}
